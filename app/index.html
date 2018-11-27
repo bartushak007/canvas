@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SVG</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <canvas width="700" height="700" id="canvas"></canvas>
+
+    <script>
+      var canvas = document.getElementById("canvas");
+      var c = canvas.getContext("2d");
+      var lineargradient = c.createLinearGradient(0, 0, 0, 500);
+      lineargradient.addColorStop(0, "#1dace9");
+      lineargradient.addColorStop(1, "white");
+      var lineargradientGreen = c.createLinearGradient(0, 500, 0, 700);
+      lineargradientGreen.addColorStop(0, "#6bcb26");
+      lineargradientGreen.addColorStop(1, "white");
+      c.fillStyle = lineargradient;
+      c.fillRect(0, 0, 700, 500);
+      c.fillStyle = lineargradientGreen;
+      c.fillRect(0, 500, 700, 200);
+      c.fillStyle = '#787878';
+      c.fillRect(250, 300, 250, 200);
+      c.fillStyle = '#555555';
+      c.beginPath();
+      c.moveTo(200, 300);
+      c.lineTo(550,300);
+      c.lineTo(380,200);
+      c.closePath();      
+      c.fill();
+      c.fillStyle = '#ffffff';
+      c.fillRect(350, 360, 100, 100);
+      c.strokeStyle = '#555555';
+      c.strokeRect(345, 355, 110, 110);
+      c.beginPath();
+      c.arc(550, 150, 50, 0.9, 1.8 * Math.PI);
+      c.lineTo(550, 150);
+      c.fillStyle = 'yellow';
+      c.fill();
+      c.fillStyle = 'red';
+      c.beginPath();
+      c.arc(100, 100, 50, 0, 2 * Math.PI);      
+      c.arc(180, 100, 50, 0, 2 * Math.PI);
+      c.arc(150, 120, 50, 0, 2 * Math.PI);
+      c.moveTo(140, 200);
+      c.lineTo(70,140);
+      c.lineTo(210,140);
+      c.closePath();       
+      c.fill();
+    </script>
+  </body>
+</html>
